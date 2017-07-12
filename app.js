@@ -11,13 +11,16 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const app = express();
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
+const expressSession = require('express-session')
+const accountRoutes = require('./routes/account');
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/flipcardsDB');
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(accountRoutes);
 
 app.listen(3000, function(){
     console.log('Flipcards App is running!');
