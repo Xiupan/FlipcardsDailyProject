@@ -25,3 +25,10 @@ app.use(accountRoutes);
 app.listen(3000, function(){
     console.log('Flipcards App is running!');
 });
+
+var session = {
+  secret: 'herpasherpaderp',
+  cookie: {},
+  resave: true,
+  saveUninitialized: true
+}

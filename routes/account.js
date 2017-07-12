@@ -36,6 +36,11 @@ router.post('/api/login', function(request, response){ // logins the user
   })
 })
 
-
+// doesnt work yet...
+// router.post('/api/logout', function(request, response){
+//   request.session.destroy(function(){
+//     response.send('Successfully logged out.')
+//   })
+// })
 
 module.exports = router;
