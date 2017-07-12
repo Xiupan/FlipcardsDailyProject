@@ -1,4 +1,4 @@
-// Have user registration, login, and logout
+// ***Have user registration, login, and logout
 // Allow the user to create multiple decks of flipcards
 // Allow the user to create flipcards within a deck
 // Allow the user to edit a flipcard
@@ -14,6 +14,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const expressSession = require('express-session')
 const accountRoutes = require('./routes/account');
+const flipcardRoutes = require('./routes/flipcard');
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
@@ -21,6 +22,7 @@ mongoose.connect('mongodb://localhost:27017/flipcardsDB');
 
 app.use(bodyParser.json());
 app.use(accountRoutes);
+app.use(flipcardRoutes);
 
 app.listen(3000, function(){
     console.log('Flipcards App is running!');
